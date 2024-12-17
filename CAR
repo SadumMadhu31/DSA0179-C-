@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Car {
+private:
+    string make;
+    string model;
+    int year;
+    double price;
+
+public:
+    Car(string carMake, string carModel, int carYear, double carPrice) {
+        make = carMake;
+        model = carModel;
+        year = carYear;
+        price = carPrice;
+        cout << "Car created: " << year << " " << make << " " << model << " with price $" << price << endl;
+    }
+
+    ~Car() {
+        cout << "Car destroyed: " << year << " " << make << " " << model << endl;
+    }
+
+    void displayCarDetails() {
+        cout << "Car details: " << endl;
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+        cout << "Price: $" << price << endl;
+    }
+
+    void updatePrice(double newPrice) {
+        price = newPrice;
+        cout << "Updated price for " << make << " " << model << " is: $" << price << endl;
+    }
+};
+
+int main() {
+    Car myCar("Toyota", "Camry", 2022, 25000);
+
+    myCar.displayCarDetails();
+
+    myCar.updatePrice(23000);
+
+    myCar.displayCarDetails();
+
+    return 0;
+}
