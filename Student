@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+    string grade;
+    double marks;
+
+public:
+        Student(string studentName, int studentAge, string studentGrade, double studentMarks) {
+        name = studentName;
+        age = studentAge;
+        grade = studentGrade;
+        marks = studentMarks;
+        cout << "Student created: " << name << ", Age: " << age << ", Grade: " << grade << ", Marks: " << marks << endl;
+    }
+
+    ~Student() {
+        cout << "Student " << name << " is being destroyed." << endl;
+    }
+
+    void displayStudentDetails() {
+        cout << "Student Details: " << endl;
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+        cout << "Grade: " << grade << endl;
+        cout << "Marks: " << marks << endl;
+    }
+
+    void updateMarks(double newMarks) {
+        marks = newMarks;
+        cout << "Updated marks for " << name << ": " << marks << endl;
+    }
+};
+
+int main() {
+    Student student1("Alice", 20, "A", 95.5);
+
+    student1.displayStudentDetails();
+
+    student1.updateMarks(98.0);
+
+    student1.displayStudentDetails();
+
+    return 0;
+}
