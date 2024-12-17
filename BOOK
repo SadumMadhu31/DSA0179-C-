@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class Book {
+private:
+    string title;
+    string author;
+    int publicationYear;
+    double price;
+
+public:
+    Book(string bookTitle, string bookAuthor, int pubYear, double bookPrice) {
+        title = bookTitle;
+        author = bookAuthor;
+        publicationYear = pubYear;
+        price = bookPrice;
+        cout << "Book created: \"" << title << "\" by " << author << " published in " << publicationYear << " with price $" << price << endl;
+    }
+
+    ~Book() {
+        cout << "Book \"" << title << "\" is being destroyed." << endl;
+    }
+
+    void displayBookDetails() {
+        cout << "Book Details: " << endl;
+        cout << "Title: \"" << title << "\"" << endl;
+        cout << "Author: " << author << endl;
+        cout << "Publication Year: " << publicationYear << endl;
+        cout << "Price: $" << price << endl;
+    }
+
+    void updatePrice(double newPrice) {
+        price = newPrice;
+        cout << "Updated price for \"" << title << "\" is: $" << price << endl;
+    }
+};
+
+int main() {
+    Book myBook("1984", "George Orwell", 1949, 15.99);
+
+    myBook.displayBookDetails();
+
+    myBook.updatePrice(12.99);
+
+    myBook.displayBookDetails();
+
+    return 0;
+}
