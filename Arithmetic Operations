@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class ArithmeticOperations {
+public:
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    int subtract(int a, int b) {
+        return a - b;
+    }
+
+    int multiply(int a, int b) {
+        return a * b;
+    }
+
+    double divide(int a, int b) {
+        if (b != 0) {
+            return (double)a / b;
+        } else {
+            cout << "Error! Division by zero." << endl;
+            return 0;
+        }
+    }
+};
+
+int main() {
+    ArithmeticOperations arithmetic;
+
+    cout << "Addition of 10 and 20: " << arithmetic.add(10, 20) << endl;
+
+    cout << "Addition of 10, 20, and 30: " << arithmetic.add(10, 20, 30) << endl;
+
+    cout << "Subtraction of 20 from 10: " << arithmetic.subtract(20, 10) << endl;
+
+    cout << "Multiplication of 10 and 5: " << arithmetic.multiply(10, 5) << endl;
+
+    cout << "Division of 20 by 5: " << arithmetic.divide(20, 5) << endl;
+
+    cout << "Division of 20 by 0: " << arithmetic.divide(20, 0) << endl;
+
+    return 0;
+}
