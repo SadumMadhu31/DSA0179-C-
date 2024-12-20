@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    int length;
+    int width;
+    int height;
+
+public:
+    Box(int l = 0, int w = 0, int h = 0) : length(l), width(w), height(h) {}
+
+    bool operator==(const Box& b) const {
+        return (length == b.length) && (width == b.width) && (height == b.height);
+    }
+
+    void display() const {
+        cout << "Box Dimensions: Length = " << length 
+             << ", Width = " << width 
+             << ", Height = " << height << endl;
+    }
+};
+
+int main() {
+    Box box1(10, 20, 30);
+    Box box2(10, 20, 30);
+
+    Box box3(15, 25, 35);
+
+    if (box1 == box2) {
+        cout << "box1 and box2 are equal." << endl;
+    } else {
+        cout << "box1 and box2 are not equal." << endl;
+    }
+
+    if (box1 == box3) {
+        cout << "box1 and box3 are equal." << endl;
+    } else {
+        cout << "box1 and box3 are not equal." << endl;
+    }
+
+    return 0;
+}
