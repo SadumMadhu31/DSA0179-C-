@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int value;
+
+public:
+    Number(int v = 0) : value(v) {}
+
+    Number operator+(const Number& other) {
+        Number temp; 
+        temp.value = this->value + other.value; 
+        return temp;  
+    }
+
+    void display() const {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main() {
+    Number num1(10), num2(20), result;
+
+    cout << "First number: ";
+    num1.display();
+
+    cout << "Second number: ";
+    num2.display();
+
+    result = num1 + num2;  
+
+    cout << "Result after addition: ";
+    result.display();
+
+    return 0;
+}
